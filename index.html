@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌤️ Weather App</h1>
+            <p>Get real-time weather information for any city</p>
+        </div>
+
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Enter city name..." 
+                class="search-input"
+            >
+            <select id="indianStates" class="states-dropdown">
+                <option value="">Select Indian State</option>
+                <option value="Mumbai, Maharashtra">Mumbai - Maharashtra</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore, Karnataka">Bangalore - Karnataka</option>
+                <option value="Hyderabad, Telangana">Hyderabad - Telangana</option>
+                <option value="Chennai, Tamil Nadu">Chennai - Tamil Nadu</option>
+                <option value="Kolkata, West Bengal">Kolkata - West Bengal</option>
+                <option value="Pune, Maharashtra">Pune - Maharashtra</option>
+                <option value="Ahmedabad, Gujarat">Ahmedabad - Gujarat</option>
+                <option value="Jaipur, Rajasthan">Jaipur - Rajasthan</option>
+                <option value="Lucknow, Uttar Pradesh">Lucknow - Uttar Pradesh</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Indore, Madhya Pradesh">Indore - Madhya Pradesh</option>
+                <option value="Kochi, Kerala">Kochi - Kerala</option>
+                <option value="Surat, Gujarat">Surat - Gujarat</option>
+                <option value="Visakhapatnam, Andhra Pradesh">Visakhapatnam - Andhra Pradesh</option>
+                <option value="Bhopal, Madhya Pradesh">Bhopal - Madhya Pradesh</option>
+                <option value="Patna, Bihar">Patna - Bihar</option>
+                <option value="Guwahati, Assam">Guwahati - Assam</option>
+                <option value="Thiruvananthapuram, Kerala">Thiruvananthapuram - Kerala</option>
+                <option value="Nagpur, Maharashtra">Nagpur - Maharashtra</option>
+                <option value="Shimla, Himachal Pradesh">Shimla - Himachal Pradesh</option>
+                <option value="Srinagar, Jammu and Kashmir">Srinagar - Jammu & Kashmir</option>
+                <option value="Panaji, Goa">Panaji - Goa</option>
+                <option value="Ranchi, Jharkhand">Ranchi - Jharkhand</option>
+                <option value="Raipur, Chhattisgarh">Raipur - Chhattisgarh</option>
+                <option value="Udaipur, Rajasthan">Udaipur - Rajasthan</option>
+                <option value="Bhubaneswar, Odisha">Bhubaneswar - Odisha</option>
+                <option value="Cuttack, Odisha">Cuttack - Odisha</option>
+                <option value="Rourkela, Odisha">Rourkela - Odisha</option>
+            </select>
+            <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="weatherInfo" class="weather-info hidden">
+            <!-- City and current conditions -->
+            <div class="city-header">
+                <h2 id="cityName"></h2>
+                <p id="currentDate"></p>
+            </div>
+
+            <!-- Weather icon and main info -->
+            <div class="weather-main">
+                <div class="weather-icon-container">
+                    <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+                </div>
+                <div class="temp-section">
+                    <div id="temperature" class="temperature"></div>
+                    <div id="description" class="description"></div>
+                </div>
+            </div>
+
+            <!-- Detailed weather information -->
+            <div class="weather-details">
+                <div class="detail-box">
+                    <span class="detail-label">Feels Like</span>
+                    <span id="feelsLike" class="detail-value"></span>
+                </div>
+                <div class="detail-box">
+                    <span class="detail-label">Humidity</span>
+                    <span id="humidity" class="detail-value"></span>
+                </div>
+                <div class="detail-box">
+                    <span class="detail-label">Wind Speed</span>
+                    <span id="windSpeed" class="detail-value"></span>
+                </div>
+                <div class="detail-box">
+                    <span class="detail-label">Pressure</span>
+                    <span id="pressure" class="detail-value"></span>
+                </div>
+                <div class="detail-box">
+                    <span class="detail-label">Visibility</span>
+                    <span id="visibility" class="detail-value"></span>
+                </div>
+                <div class="detail-box">
+                    <span class="detail-label">UV Index</span>
+                    <span id="uvIndex" class="detail-value"></span>
+                </div>
+            </div>
+
+            <!-- Sunrise and Sunset -->
+            <div class="sun-times">
+                <div class="sun-box">
+                    <span class="sun-label">🌅 Sunrise</span>
+                    <span id="sunrise" class="sun-value"></span>
+                </div>
+                <div class="sun-box">
+                    <span class="sun-label">🌇 Sunset</span>
+                    <span id="sunset" class="sun-value"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
